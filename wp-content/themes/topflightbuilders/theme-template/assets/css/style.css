@@ -1,0 +1,519 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    color: black;
+    overflow-x: hidden;
+    background-color: white;
+}
+
+/* NAVBAR */
+nav {
+    background-color: white;
+    border-bottom: 2px solid #004cbf !important;
+}
+.navbar .nav-item {
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+.navbar .nav-link {
+    color: black;
+    position: relative;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.navbar .highlightTextIn {
+    vertical-align: bottom;
+    padding-bottom: 5px;
+    line-height: 0;
+    align-self: flex-end;
+    font-size: 20px;
+}
+.navbar .navbar-toggler {
+    align-self: flex-end;
+}
+.navbar-brand {
+    padding: 0;
+}
+.navbar-brand img {
+    height: 65px;
+}
+.highlightTextIn li {
+    position: relative;
+}
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 2px;
+    width: 100%;
+    background-color: #004cbf;
+    transition: all .3s;
+    opacity: 0;
+}
+.navbar .nav-link:hover::after, .navbar .nav-link.active::after {
+    background-color: #004cbf;
+    bottom: -10px;
+    opacity: 1;
+}
+.highlightTextIn .nav-link::before {
+    position: absolute;
+    color: #004cbf;
+    top: 0px;
+    left: 0px;
+    padding: inherit;
+    margin: inherit;
+    overflow: hidden;
+    content: attr(data-text);
+    transition: all 0.2s;
+    transform: scale(0.8);
+    opacity: 0;
+}
+.highlightTextIn .nav-link:hover::before, .highlightTextIn .nav-link.active::before {
+    transform: scale(1);
+    opacity: 1;
+}
+.highlightTextIn .nav-link::before {
+    transform: scale(1.2);
+}
+@media only screen and (max-width: 768px) {
+    .highlightTextIn li {
+        text-align: left;
+        margin: 10px 0;
+    }
+}
+@media only screen and (max-width: 424px) {
+    nav {
+        padding: 10px 5px !important;
+    }
+    .navbar-brand img {
+        height: 50px;
+    }
+}
+@media only screen and (max-width: 325px) {
+    nav {
+        padding: 10px 5px !important;
+    }
+    .navbar-brand img {
+        height: 40px;
+    }
+}
+
+/* add margin to elements to add space between navbar */
+.navbar-margin {
+    margin-top: 81px;
+}
+
+/* Site Sections */
+.site-section {
+    padding: 7.5em 0;
+}
+.site-section h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    height: 5px;
+    background-color: #004cbf;
+    width: 100px;
+}
+
+/* SPLASH HEADER */
+.splash-header {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    color: white;
+}
+.splash-header .hero-text {
+    padding: 5em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+.splash-header img {
+    object-fit: cover;
+    width: 100vw !important;
+    min-height: 60vh;
+    z-index: 1;
+}
+.splash-header .img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(0,0,0,.3);
+    width: 100%;
+    height: 100%;
+}
+.splash-header button a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Services */
+.services {
+    background-color: whitesmoke;
+}
+/*.services .card {
+    background-color: white;
+    box-shadow: 1px 0px 10px 5px #eaeaea;
+    max-height: 230px;
+    overflow: hidden;
+}
+
+.services .card h3 {
+    font-size: 25px;
+    background-color: white;
+    width: 100%;
+    display: inline-block;
+}
+.services .card .card-body {
+    
+    background-color: white;
+}
+
+.services .card-main-text {
+	position: relative;
+	bottom: 0;
+	z-index: 1;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+    background-color: white;
+    width: 100%;
+}
+.services .card-popup {
+    background-color: white;
+	position: absolute;
+	width: 100%;
+	height: 125px;
+    left: 0;
+	bottom: 0;
+	z-index: 1;
+	opacity: 0;
+	transform: translate(0px, 125px);
+	-webkit-transform: translate(0px, 125px);
+	-moz-transform: translate(0px, 125px);
+	-o-transform: translate(0px, 125px);
+	-ms-transform: translate(0px, 125px);
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+.services .card-popup span {
+    background-color: white;
+	font-size: 17px;
+	color: black;
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	top: 15px;
+    padding: 0 5px;
+    display: block;
+}
+.services .card:hover {
+    cursor: pointer;
+}
+.services .card:hover .card-main-text {
+	transform: translate(0, -100px);
+	-webkit-transform: translate(0, -100px);
+	-moz-transform: translate(0, -100px);
+	-o-transform: translate(0, -100px);
+	-ms-transform: translate(0, -100px);
+}
+.services .card:hover .card-popup {
+	transform: translate(0px, 0px);
+	-webkit-transform: translate(0px, 0px);
+	-moz-transform: translate(0px, 0px);
+	-o-transform: translate(0px, 0px);
+	-ms-transform: translate(0px, 0px);
+	opacity: 1;
+}
+
+.services .card img {
+    position: relative;
+    display: block;
+    min-height: 75px;
+    max-height: 75px;
+    width: auto;
+    height: auto;
+
+    /*left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);*
+}*/
+
+
+
+
+.services .card {
+	background-color: #004cbf;
+	padding: 0;
+	overflow: hidden;
+	max-width: 350px;
+    max-height: 350px;
+	margin: 5px;
+}
+
+.services .card .card-main-text {
+    width: 100%;
+    padding: 20px;
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.services .card h3 {
+	color: #fff;
+	font-weight: 800;
+	font-size: 25px;
+    padding-bottom: 5px;
+	border-bottom: #fff solid 1px;
+}
+
+.services .card img {
+	height: 350px;
+    width: auto;
+	top: 0;
+	left: 0;
+    opacity: .8;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+.services .popup-text {
+    text-align: left;
+    padding: 20px;
+	position: absolute;
+	width: 100%;
+	height: 125px;
+	bottom: 0;
+	z-index: 1;
+	opacity: 0;
+	transform: translate(0px, 125px);
+	-webkit-transform: translate(0px, 125px);
+	-moz-transform: translate(0px, 125px);
+	-o-transform: translate(0px, 125px);
+	-ms-transform: translate(0px, 125px);
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+.services .popup-text span {
+	color: #fff;
+	position: relative;
+	width: 100%;
+	top: 13px;
+    font-size: 17px;
+}
+
+.services .card:hover {
+	cursor: pointer;
+}
+
+.services .card:hover img {
+	opacity: 0.6;
+	transform: scale(1.2);
+}
+
+.services .card:hover .card-main-text {
+	transform: translate(0, -75px);
+	-webkit-transform: translate(0, -75px);
+	-moz-transform: translate(0, -75px);
+	-o-transform: translate(0, -75px);
+	-ms-transform: translate(0, -75px);
+}
+
+.services .card:hover .popup-text {
+	transform: translate(0px, 0px);
+	-webkit-transform: translate(0px, 0px);
+	-moz-transform: translate(0px, 0px);
+	-o-transform: translate(0px, 0px);
+	-ms-transform: translate(0px, 0px);
+	opacity: 1;
+}
+
+
+
+
+
+
+
+/* Testimonials */
+.testimonials h3 {
+    margin-bottom: 20px;
+}
+.testimonials .card {
+    border-bottom: 3px #004cbf solid !important;
+    transition: 0.5s;
+    margin-top: 40px;
+    background-color: whitesmoke;
+    position: relative;
+}
+.testimonials .card i {
+    background-color: #004cbf;
+    color: #ffffff;
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    margin: -40px auto 0 auto;
+}
+.carousel {
+    position: relative;
+    padding-bottom: 7.5em;
+}
+/*.carousel .slick-track {
+    display: table !important;
+    position: relative !important;
+    overflow: visible !important;
+}*/
+.carousel .slick-slide {
+    /*display: table-cell !important;
+    position: relative !important;
+    height: 100%;*/
+    outline: none !important;
+}
+.carousel .slick-list {
+    padding: 75px 30px 50px 30px;
+    margin: -100px 0;
+}
+.carousel .card {
+    height: calc(100% - 40px) !important;
+    box-shadow: 0px 0px 0px 1px #d5d5d5;
+    transition: all .5s;
+    z-index: 4;
+}
+.carousel .card:hover {
+    cursor: pointer;
+    box-shadow: 1px 0px 10px 5px #eaeaea;
+    z-index: 5;
+    -webkit-transform: scale(1.15);
+    -moz-transform: scale(1.15);
+    transform: scale(1.15);
+}
+.carousel .slick-prev:before {
+    color: #004cbf;
+}
+.carousel .slick-next:before {
+    color: #004cbf;
+}
+.carousel .slick-dots li button:before, .slick-dots li.slick-active button:before {
+    color: #004cbf;
+}
+/*.carousel .slick-track {
+    display: flex !important;
+    position: relative !important;
+    align-items: stretch !important;
+}
+.carousel .slick-slide {
+    flex: 1;
+}
+.carousel .card {
+    height: 100%;
+}*/
+
+
+
+
+/* CONTACT FORM */
+.contact {
+    background-color: whitesmoke;
+    color: black;
+}
+.contact-form {
+    max-width: 65%;
+    margin: 0 auto;
+}
+.contact-form .col {
+    padding: 0 20px;
+    float: left;
+    box-sizing: border-box;
+}
+.contact-form .x-50 {
+    width: 50%;
+}
+.contact-form .x-100 {
+    width: 100%;
+}
+.contact-form .form-field {
+    position: relative;
+    margin: 32px 0;
+}
+.contact-form .input-text {
+    background-color: transparent;
+    display: block;
+    width: 100%;
+    min-height: 36px;
+    border-width: 0 0 2px 0;
+    border-color: black;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+}
+.contact-form .input-text:focus {
+    outline: none;
+}
+.contact-form .input-text:focus + .label, .contact-form .input-text.not-empty + .label {
+    transform: translateY(-24px);
+}
+.contact-form .label {
+    position: absolute;
+    left: 20px;
+    top: -12px;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    color: rgb(104, 104, 104);
+    cursor: text;
+    transition: transform 0.2s ease-in-out;
+}
+.contact-form button {
+    background-color: transparent;
+    color: #004cbf;
+    border: 2px solid #004cbf;
+    transition: all .3s;
+}
+.contact-form button:hover {
+    background-color: #004cbf;
+    color: white;
+}
+
+/* ABOUT */
+.story {
+    background-color: whitesmoke;
+}
+.story .col-md-7 {
+    background-color: white;
+    padding: 2.5rem;
+}
+.mission .col-md-7 {
+    background-color: whitesmoke;
+    padding: 2.5rem;
+}
+
+/* FOOTER */
+footer {
+    border-top: 2px solid #004cbf !important;
+}
